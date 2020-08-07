@@ -33,9 +33,16 @@ public class Program {
 		list.forEach(x -> System.out.println(x));
 
 		System.out.println("\n=== TEST 4: seller insert ===");
-		Seller newSeller = new Seller(null, "Carlos", "carlos@gmail.com", new Date(), 4000.0, dep);
+		Seller newSeller = new Seller(null, "Janaina Maia", "janaina@gmail.com", new Date(), 6000.0, dep);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
+	
+		System.out.println("\n=== TEST 5: seller update ===");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Wayne");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
+		
 	}
 
 }
